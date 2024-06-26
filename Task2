@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Function to convert Celsius to Fahrenheit
+double celsiusToFahrenheit(double celsius) {
+  return (celsius * 9.0 / 5.0) + 32.0;
+}
+
+// Function to convert Fahrenheit to Celsius
+double fahrenheitToCelsius(double fahrenheit) {
+  return (fahrenheit - 32.0) * 5.0 / 9.0;
+}
+
+// Function to convert Celsius to Kelvin
+double celsiusToKelvin(double celsius) {
+  return celsius + 273.15;
+}
+
+// Function to convert Kelvin to Celsius
+double kelvinToCelsius(double kelvin) {
+  return kelvin - 273.15;
+}
+
+// Function to convert Fahrenheit to Kelvin
+double fahrenheitToKelvin(double fahrenheit) {
+  return (fahrenheit - 32.0) * 5.0 / 9.0 + 273.15;
+}
+
+// Function to convert Kelvin to Fahrenheit
+double kelvinToFahrenheit(double kelvin) {
+  return (kelvin - 273.15) * 9.0 / 5.0 + 32.0;
+}
+
+int main() {
+  string fromUnit, toUnit;
+  double temperature;
+
+  cout << "Temperature Conversion Program" << endl;
+  cout << "-------------------------------" << endl;
+
+  cout << "Enter the temperature value: ";
+  cin >> temperature;
+
+  cout << "Enter the unit of the temperature (Celsius, Fahrenheit, Kelvin): ";
+  cin >> fromUnit;
+
+  cout << "Enter the unit to convert to (Celsius, Fahrenheit, Kelvin): ";
+  cin >> toUnit;
+
+  if (fromUnit == "Celsius" && toUnit == "Fahrenheit") {
+    cout << temperature << " Celsius is " << celsiusToFahrenheit(temperature) << " Fahrenheit." << endl;
+  } else if (fromUnit == "Celsius" && toUnit == "Kelvin") {
+    cout << temperature << " Celsius is " << celsiusToKelvin(temperature) << " Kelvin." << endl;
+  } else if (fromUnit == "Fahrenheit" && toUnit == "Celsius") {
+    cout << temperature << " Fahrenheit is " << fahrenheitToCelsius(temperature) << " Celsius." << endl;
+  } else if (fromUnit == "Fahrenheit" && toUnit == "Kelvin") {
+    cout << temperature << " Fahrenheit is " << fahrenheitToKelvin(temperature) << " Kelvin." << endl;
+  } else if (fromUnit == "Kelvin" && toUnit == "Celsius") {
+    cout << temperature << " Kelvin is " << kelvinToCelsius(temperature) << " Celsius." << endl;
+  } else if (fromUnit == "Kelvin" && toUnit == "Fahrenheit") {
+    cout << temperature << " Kelvin is " << kelvinToFahrenheit(temperature) << " Fahrenheit." << endl;
+  } else {
+    cout << "Invalid unit. Please try again." << endl;
+  }
+
+  return 0;
+}
